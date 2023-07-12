@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodstoreloop
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: foodstoreloop
+  template:
+    metadata:
+      labels:
+        app: foodstoreloop
+    spec:
+      containers:
+      - name: foodstoreloop
+        image: totovld/foodstoreloop:latest
+        ports:
+        - containerPort: 8080
+
